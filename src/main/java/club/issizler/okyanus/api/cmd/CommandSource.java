@@ -2,7 +2,9 @@ package club.issizler.okyanus.api.cmd;
 
 public class CommandSource {
 
-    /** Is this source the server console? */
+    /**
+     * Is this source the server console?
+     */
     public boolean isConsole() {
         return false;
     }

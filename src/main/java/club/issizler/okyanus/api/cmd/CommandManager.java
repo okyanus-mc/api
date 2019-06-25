@@ -8,7 +8,9 @@ package club.issizler.okyanus.api.cmd;
 public enum CommandManager {
     INSTANCE;
 
-    /** Registers a command */
+    /**
+     * Registers a command
+     */
     public void register(CommandBuilder cmd) {
     }
 

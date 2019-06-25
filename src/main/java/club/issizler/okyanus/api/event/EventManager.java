@@ -21,9 +21,10 @@ public enum EventManager {
      * While this is mostly used internally, you can use it to trigger your custom events.
      *
      * @param e Event class
+     * @return The modified event
      */
-    public void trigger(Event e) {
-        
+    public Event trigger(Event e) {
+        return null;
     }
 
 }
