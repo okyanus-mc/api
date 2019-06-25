@@ -10,6 +10,7 @@ public enum CommandManager {
 
     /**
      * Registers a command
+     * @param cmd Your command builder
      */
     public void register(CommandBuilder cmd) {
     }
