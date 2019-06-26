@@ -38,4 +38,19 @@ public class ChatEvent implements Event, Cancellable {
     public Player getPlayer() {
         return null;
     }
+
+    /**
+     * Returns the formatted message
+     * @return the formatted message
+     */
+    public String getFormattedMessage() {
+        return null;
+    }
+
+    /**
+     * Sets the message format
+     * @param format the new message format
+     */
+    public void setFormat(String format) {
+    }
 }
