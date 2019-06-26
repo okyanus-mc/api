@@ -24,6 +24,14 @@ public class CommandSource {
     }
 
     /**
+     * Gets the player that ran this command
+     * @return the player
+     */
+    public Player getPlayer() {
+        return null;
+    }
+
+    /**
      * Gets a text argument
      *
      * @param arg Argument name

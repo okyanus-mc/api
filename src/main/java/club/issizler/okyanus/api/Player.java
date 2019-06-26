@@ -54,4 +54,11 @@ public class Player {
      */
     public void send(String message, MessageType type) {
     }
+
+    /**
+     * Kick a player from the server
+     * @param message The kick message
+     */
+    public void kick(String message) {
+    }
 }
