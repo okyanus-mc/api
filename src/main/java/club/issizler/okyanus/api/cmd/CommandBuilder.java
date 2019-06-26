@@ -23,6 +23,16 @@ public class CommandBuilder {
     }
 
     /**
+     * Adds an argument to this command
+     * @param name Argument name
+     * @param type Argument type
+     * @return The builder
+     */
+    public CommandBuilder arg(String name, ArgumentType type) {
+        return this;
+    }
+
+    /**
      * Links the {@link club.issizler.okyanus.api.cmd.CommandRunnable} of your command
      *
      * @param runnable The runnable of your command
