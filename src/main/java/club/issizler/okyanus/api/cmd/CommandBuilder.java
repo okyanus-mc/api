@@ -23,12 +23,32 @@ public class CommandBuilder {
     }
 
     /**
+     * Adds an (possibly optional) argument to this command
+     *
+     * @see CommandBuilder#arg(String, ArgumentType)
+     */
+    public CommandBuilder arg(String name, ArgumentType type, boolean isOptional) {
+        return this;
+    }
+
+    /**
      * Adds an argument to this command
      * @param name Argument name
      * @param type Argument type
      * @return The builder
      */
     public CommandBuilder arg(String name, ArgumentType type) {
+        return this;
+    }
+
+    /**
+     * Adds an sub command to this command
+     * A subcommand is created exactly like a normal command.
+     *
+     * @param subcommand The sub command
+     * @return The builder
+     */
+    public CommandBuilder subcommand(CommandBuilder subcommand) {
         return this;
     }
 
