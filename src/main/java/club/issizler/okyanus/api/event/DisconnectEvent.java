@@ -3,9 +3,9 @@ package club.issizler.okyanus.api.event;
 import club.issizler.okyanus.api.Player;
 
 /**
- * This event fires whenever a player connects the server
+ * This event fires whenever a player disconnects from server
  */
-public class ConnectEvent implements PlayerEvent {
+public class DisconnectEvent implements PlayerEvent {
 
     public Player getPlayer() {
         return null;

@@ -5,7 +5,7 @@ import club.issizler.okyanus.api.Player;
 /**
  * This event fires whenever a player sends a chat message.
  */
-public class ChatEvent implements Event, Cancellable {
+public class ChatEvent implements PlayerEvent, Cancellable {
 
     /**
      * Gets the chat message that has been sent
@@ -31,10 +31,6 @@ public class ChatEvent implements Event, Cancellable {
     public void setCancelled(boolean isCancelled) {
     }
 
-    /**
-     * Returns the player that sent this message
-     * @return the player that sent this message
-     */
     public Player getPlayer() {
         return null;
     }
@@ -53,4 +49,5 @@ public class ChatEvent implements Event, Cancellable {
      */
     public void setFormat(String format) {
     }
+
 }

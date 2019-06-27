@@ -23,7 +23,7 @@ public enum EventManager {
      * @param e Event class
      * @return The modified event
      */
-    public Event trigger(Event e) {
+    public <E extends Event> E trigger(E e) {
         return null;
     }
 

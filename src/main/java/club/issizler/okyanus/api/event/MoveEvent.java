@@ -5,7 +5,7 @@ import club.issizler.okyanus.api.Player;
 /**
  * This event fires whenever a player has moved
  */
-public class MoveEvent implements Event, Cancellable {
+public class MoveEvent implements PlayerEvent, Cancellable {
 
     @Override
     public boolean isCancelled() {
@@ -16,11 +16,8 @@ public class MoveEvent implements Event, Cancellable {
     public void setCancelled(boolean isCancelled) {
     }
 
-    /**
-     * Returns the player that moved
-     * @return the player that moved
-     */
     public Player getPlayer() {
         return null;
     }
+
 }
