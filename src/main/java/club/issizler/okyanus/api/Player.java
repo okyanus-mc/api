@@ -1,6 +1,7 @@
 package club.issizler.okyanus.api;
 
 import club.issizler.okyanus.api.chat.MessageType;
+import club.issizler.okyanus.api.math.Vec3d;
 
 import java.util.UUID;
 
@@ -38,6 +39,29 @@ public class Player {
      */
     public UUID getUUID() {
         return null;
+    }
+
+    /**
+     * Get the players position
+     * @return Player's position
+     */
+    public Vec3d getPos() {
+        return null;
+    }
+
+    /**
+     * Get the world the player is in
+     * @return the world the player is in
+     */
+    public World getWorld() {
+        return null;
+    }
+
+    /**
+     * Teleport the player
+     * @param pos Position to teleport the player to
+     */
+    public void teleport(Vec3d pos) {
     }
 
     /**
