@@ -1,11 +1,12 @@
 package club.issizler.okyanus.api.event;
 
 import club.issizler.okyanus.api.Player;
+import club.issizler.okyanus.api.math.Vec3d;
 
 /**
  * This event fires whenever a block has been placed by a player
  */
-public class PlaceEvent implements PlayerEvent, Cancellable {
+public class PlaceEvent implements PlayerEvent, Cancellable, Locateable {
 
     private boolean isCancelled;
 
@@ -22,6 +23,11 @@ public class PlaceEvent implements PlayerEvent, Cancellable {
     @Override
     public void setCancelled(boolean isCancelled) {
         this.isCancelled = isCancelled;
+    }
+
+    @Override
+    public Vec3d getLocation() {
+        return null;
     }
 
 }

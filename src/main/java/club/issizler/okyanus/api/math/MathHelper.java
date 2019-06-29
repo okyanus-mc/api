@@ -1,10 +1,9 @@
+package club.issizler.okyanus.api.math;
+
 /**
  * net.minecraft.util.math.MathHelper
  * Reduced for functions we need
  */
-
-package club.issizler.okyanus.api.math;
-
 public class MathHelper {
 
     public static float sqrt(double double_1) {

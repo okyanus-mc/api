@@ -1,10 +1,9 @@
-/**
- * net.minecraft.util.math.Vec3d
- * Also I'm too lazy to stub this one out
- */
-
 package club.issizler.okyanus.api.math;
 
+/**
+ * net.minecraft.util.math.Vec3d
+ * I'm too lazy to stub this one out
+ */
 public class Vec3d {
 
     public static final Vec3d ZERO = new Vec3d(0.0D, 0.0D, 0.0D);

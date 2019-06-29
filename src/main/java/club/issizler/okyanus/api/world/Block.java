@@ -1,9 +1,9 @@
-package club.issizler.okyanus.api;
+package club.issizler.okyanus.api.world;
 
 /**
  * This class is empty for now.
  * You can submit API requests from https://github.com/okyanus-mc/api/issues
  */
-public class World {
+public class Block {
 
 }
