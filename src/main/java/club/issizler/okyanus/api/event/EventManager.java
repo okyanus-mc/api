@@ -31,7 +31,10 @@ public interface EventManager {
      * @return The implementation
      */
     static EventManager getInstance() {
-        return ServiceLoader.load(EventManager.class).iterator().next();
+        if (_ManagerStatic_pleaseDoNotUseThisHorribleHack.manager == null)
+            _ManagerStatic_pleaseDoNotUseThisHorribleHack.manager = ServiceLoader.load(EventManager.class).iterator().next();
+
+        return _ManagerStatic_pleaseDoNotUseThisHorribleHack.manager;
     }
 
 }

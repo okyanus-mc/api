@@ -8,6 +8,7 @@ import java.util.ServiceLoader;
  * Use {@link CommandManager#getInstance()} to get an instance.
  */
 public interface CommandManager {
+
     /**
      * Registers a command
      * @param cmd Your command builder
@@ -20,7 +21,10 @@ public interface CommandManager {
      * @return The implementation
      */
     static CommandManager getInstance() {
-        return ServiceLoader.load(CommandManager.class).iterator().next();
+        if (_ManagerStatic_pleaseDoNotUseThisHorribleHack.manager == null)
+            _ManagerStatic_pleaseDoNotUseThisHorribleHack.manager = ServiceLoader.load(CommandManager.class).iterator().next();
+
+        return _ManagerStatic_pleaseDoNotUseThisHorribleHack.manager;
     }
 
 }
