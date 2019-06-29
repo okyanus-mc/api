@@ -1,6 +1,6 @@
 package club.issizler.okyanus.api.event;
 
-import club.issizler.okyanus.api.Player;
+import club.issizler.okyanus.api.entity.Player;
 
 /**
  * Marks an {@link Event} as a player event.

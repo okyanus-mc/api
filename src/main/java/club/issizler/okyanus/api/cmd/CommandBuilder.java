@@ -68,7 +68,7 @@ public class CommandBuilder {
      * @param subcommand The sub command
      * @return The builder
      */
-    public CommandBuilder subcommand(CommandBuilder subcommand) {
+    public CommandBuilder subCommand(CommandBuilder subcommand) {
         this.subCommands.add(subcommand);
         return this;
     }
