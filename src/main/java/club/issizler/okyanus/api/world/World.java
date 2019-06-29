@@ -15,4 +15,11 @@ public interface World {
      */
     void setBlockAt(Vec3d pos, Blocks block);
 
+    /**
+     * Gets the block at pos
+     * @param pos The position
+     * @return The block at pos
+     */
+    Block getBlockAt(Vec3d pos);
+
 }
