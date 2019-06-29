@@ -9,81 +9,76 @@ import java.util.UUID;
 /**
  * This is the representation of a player
  */
-public class Player {
+public interface Player {
 
     /**
      * Get player name
+     *
      * @return Player name
      */
-    public String getName() {
-        return null;
-    }
+    String getName();
 
     /**
      * Get player's custom name
+     *
      * @return Custom name
      */
-    public String getCustomName() {
-        return null;
-    }
+    String getCustomName();
 
     /**
      * Set player's custom name
+     *
      * @param name New custom name
      */
-    public void setCustomName(String name) {
-    }
+    void setCustomName(String name);
 
     /**
      * Get player's UUID
+     *
      * @return Player's UUID
      */
-    public UUID getUUID() {
-        return null;
-    }
+    UUID getUUID();
 
     /**
      * Get the players position
+     *
      * @return Player's position
      */
-    public Vec3d getPos() {
-        return null;
-    }
+    Vec3d getPos();
 
     /**
      * Get the world the player is in
+     *
      * @return the world the player is in
      */
-    public World getWorld() {
-        return null;
-    }
+    World getWorld();
 
     /**
      * Teleport the player
+     *
      * @param pos Position to teleport the player to
      */
-    public void teleport(Vec3d pos) {
-    }
+    void teleport(Vec3d pos);
 
     /**
      * Send a chat message to this player
+     *
      * @param message Message to send
      */
-    public void send(String message) {
-    }
+    void send(String message);
 
     /**
      * Send a message to this player
+     *
      * @param message Message to send
-     * @param type Type of the sent message
+     * @param type    Type of the sent message
      */
-    public void send(String message, MessageType type) {
-    }
+    void send(String message, MessageType type);
 
     /**
      * Kick a player from the server
+     *
      * @param message The kick message
      */
-    public void kick(String message) {
-    }
+    void kick(String message);
 }

@@ -2,7 +2,6 @@ package club.issizler.okyanus.api.math;
 
 /**
  * net.minecraft.util.math.Vec3d
- * I'm too lazy to stub this one out
  */
 public class Vec3d {
 

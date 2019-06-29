@@ -3,43 +3,42 @@ package club.issizler.okyanus.api.cmd;
 /**
  * This is a builder for chat commands
  */
-public class CommandBuilder {
+public interface CommandBuilder {
 
     /**
      * Sets the command name
+     *
      * @param name Command name
      * @return The builder
      */
-    public CommandBuilder name(String name) {
-        return this;
-    }
+    CommandBuilder name(String name);
 
     /**
      * Marks the command as OP only
+     *
      * @return The builder
      */
-    public CommandBuilder opOnly() {
-        return this;
-    }
+    CommandBuilder opOnly();
 
     /**
      * Adds an (possibly optional) argument to this command
      *
+     * @param name       Argument name
+     * @param type       Argument type
+     * @param isOptional Is this argument optional
+     * @return The builder
      * @see CommandBuilder#arg(String, ArgumentType)
      */
-    public CommandBuilder arg(String name, ArgumentType type, boolean isOptional) {
-        return this;
-    }
+    CommandBuilder arg(String name, ArgumentType type, boolean isOptional);
 
     /**
      * Adds an argument to this command
+     *
      * @param name Argument name
      * @param type Argument type
      * @return The builder
      */
-    public CommandBuilder arg(String name, ArgumentType type) {
-        return this;
-    }
+    CommandBuilder arg(String name, ArgumentType type);
 
     /**
      * Adds an sub command to this command
@@ -48,9 +47,7 @@ public class CommandBuilder {
      * @param subcommand The sub command
      * @return The builder
      */
-    public CommandBuilder subcommand(CommandBuilder subcommand) {
-        return this;
-    }
+    CommandBuilder subcommand(CommandBuilder subcommand);
 
     /**
      * Links the {@link club.issizler.okyanus.api.cmd.CommandRunnable} of your command
@@ -58,8 +55,6 @@ public class CommandBuilder {
      * @param runnable The runnable of your command
      * @return The builder
      */
-    public CommandBuilder run(CommandRunnable runnable) {
-        return this;
-    }
+    CommandBuilder run(CommandRunnable runnable);
 
 }

@@ -6,11 +6,3 @@ group 'club.issizler'
 version '0.1.0'
 
 sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation 'com.electronwill.night-config:toml:3.4.0'
-}

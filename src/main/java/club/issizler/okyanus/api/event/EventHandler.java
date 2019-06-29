@@ -6,7 +6,7 @@ package club.issizler.okyanus.api.event;
  *
  * @param <T> The event you want to handle
  */
-public interface EventHandler<T extends Event> {
+public interface EventHandler<T> {
 
     public void handle(T event);
 

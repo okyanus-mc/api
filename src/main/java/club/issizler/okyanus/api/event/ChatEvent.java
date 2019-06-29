@@ -1,53 +1,36 @@
 package club.issizler.okyanus.api.event;
 
-import club.issizler.okyanus.api.Player;
-
 /**
  * This event fires whenever a player sends a chat message.
  */
-public class ChatEvent implements PlayerEvent, Cancellable {
+public interface ChatEvent extends PlayerEvent, Cancellable {
 
     /**
      * Gets the chat message that has been sent
+     *
      * @return The chat message
      */
-    public String getMessage() {
-        return "";
-    }
+    String getMessage();
 
     /**
      * Sets the chat message that has been sent
+     *
      * @param message The new message
      */
-    public void setMessage(String message) {
-    }
-
-    @Override
-    public boolean isCancelled() {
-        return false;
-    }
-
-    @Override
-    public void setCancelled(boolean isCancelled) {
-    }
-
-    public Player getPlayer() {
-        return null;
-    }
+    void setMessage(String message);
 
     /**
      * Returns the formatted message
+     *
      * @return the formatted message
      */
-    public String getFormattedMessage() {
-        return null;
-    }
+    String getFormattedMessage();
 
     /**
      * Sets the message format
+     *
      * @param format the new message format
      */
-    public void setFormat(String format) {
-    }
+    void setFormat(String format);
 
 }
