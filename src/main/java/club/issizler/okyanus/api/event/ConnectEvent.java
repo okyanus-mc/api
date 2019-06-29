@@ -7,7 +7,7 @@ public interface ConnectEvent extends PlayerEvent, Cancellable {
 
     /**
      * Sets the cancellation reason
-     *
+     * <p>
      * This will be the text shown to user when
      * this event gets cancelled.
      */

@@ -16,6 +16,14 @@ public class Vec3d {
         this.z = double_3;
     }
 
+    public static Vec3d fromPolar(float float_1, float float_2) {
+        float float_3 = MathHelper.cos(-float_2 * 0.017453292F - 3.1415927F);
+        float float_4 = MathHelper.sin(-float_2 * 0.017453292F - 3.1415927F);
+        float float_5 = -MathHelper.cos(-float_1 * 0.017453292F);
+        float float_6 = MathHelper.sin(-float_1 * 0.017453292F);
+        return new Vec3d((double) (float_4 * float_5), (double) float_6, (double) (float_3 * float_5));
+    }
+
     public Vec3d reverseSubtract(Vec3d vec3d_1) {
         return new Vec3d(vec3d_1.x - this.x, vec3d_1.y - this.y, vec3d_1.z - this.z);
     }
@@ -141,14 +149,6 @@ public class Vec3d {
         double double_2 = this.y;
         double double_3 = this.z * (double) float_2 - this.x * (double) float_3;
         return new Vec3d(double_1, double_2, double_3);
-    }
-
-    public static Vec3d fromPolar(float float_1, float float_2) {
-        float float_3 = MathHelper.cos(-float_2 * 0.017453292F - 3.1415927F);
-        float float_4 = MathHelper.sin(-float_2 * 0.017453292F - 3.1415927F);
-        float float_5 = -MathHelper.cos(-float_1 * 0.017453292F);
-        float float_6 = MathHelper.sin(-float_1 * 0.017453292F);
-        return new Vec3d((double) (float_4 * float_5), (double) float_6, (double) (float_3 * float_5));
     }
 
     public final double getX() {

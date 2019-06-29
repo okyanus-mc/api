@@ -2,6 +2,7 @@ package club.issizler.okyanus.api;
 
 import club.issizler.okyanus.api.chat.MessageType;
 import club.issizler.okyanus.api.math.Vec3d;
+import club.issizler.okyanus.api.world.Block;
 import club.issizler.okyanus.api.world.World;
 
 import java.util.UUID;
@@ -52,6 +53,15 @@ public interface Player {
      * @return the world the player is in
      */
     World getWorld();
+
+    /**
+     * Gets the block the player is looking at
+     *
+     * @param distance     How far should we check before giving up
+     * @param returnFluids Should we return fluids?
+     * @return Block, or null if we couldn't find anything or we found an entity
+     */
+    Block getLookedBlock(double distance, boolean returnFluids);
 
     /**
      * Teleport the player

@@ -4,16 +4,10 @@ import java.util.ServiceLoader;
 
 /**
  * This class is used in registering commands
- *
+ * <p>
  * Use {@link CommandManager#getInstance()} to get an instance.
  */
 public interface CommandManager {
-
-    /**
-     * Registers a command
-     * @param cmd Your command builder
-     */
-    void register(CommandBuilder cmd);
 
     /**
      * Gets the implementation of CommandManager
@@ -26,5 +20,12 @@ public interface CommandManager {
 
         return _ManagerStatic_pleaseDoNotUseThisHorribleHack.manager;
     }
+
+    /**
+     * Registers a command
+     *
+     * @param cmd Your command builder
+     */
+    void register(CommandBuilder cmd);
 
 }

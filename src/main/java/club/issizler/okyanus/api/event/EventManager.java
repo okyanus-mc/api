@@ -9,6 +9,18 @@ import java.util.ServiceLoader;
 public interface EventManager {
 
     /**
+     * Gets the implementation of EventManager
+     *
+     * @return The implementation
+     */
+    static EventManager getInstance() {
+        if (_ManagerStatic_pleaseDoNotUseThisHorribleHack.manager == null)
+            _ManagerStatic_pleaseDoNotUseThisHorribleHack.manager = ServiceLoader.load(EventManager.class).iterator().next();
+
+        return _ManagerStatic_pleaseDoNotUseThisHorribleHack.manager;
+    }
+
+    /**
      * This method registers your events to this event manager
      *
      * @param eventClass Your event handler class
@@ -24,17 +36,5 @@ public interface EventManager {
      * @return The modified event
      */
     <E> E trigger(E e);
-
-    /**
-     * Gets the implementation of EventManager
-     *
-     * @return The implementation
-     */
-    static EventManager getInstance() {
-        if (_ManagerStatic_pleaseDoNotUseThisHorribleHack.manager == null)
-            _ManagerStatic_pleaseDoNotUseThisHorribleHack.manager = ServiceLoader.load(EventManager.class).iterator().next();
-
-        return _ManagerStatic_pleaseDoNotUseThisHorribleHack.manager;
-    }
 
 }

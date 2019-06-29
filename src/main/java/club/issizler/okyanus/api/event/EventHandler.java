@@ -8,6 +8,6 @@ package club.issizler.okyanus.api.event;
  */
 public interface EventHandler<T> {
 
-    public void handle(T event);
+    void handle(T event);
 
 }
