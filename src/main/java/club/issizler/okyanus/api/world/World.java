@@ -13,6 +13,6 @@ public interface World {
      * @param pos   The position
      * @param block The new block
      */
-    void setBlockAt(Vec3d pos, Block block);
+    void setBlockAt(Vec3d pos, Blocks block);
 
 }

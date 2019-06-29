@@ -2,6 +2,9 @@ package club.issizler.okyanus.api.event;
 
 import club.issizler.okyanus.api.Player;
 
+/**
+ * Marks an {@link Event} as a player event.
+ */
 public interface PlayerEvent {
 
     /**

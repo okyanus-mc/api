@@ -1,5 +1,8 @@
 package club.issizler.okyanus.api.world;
 
+/**
+ * A list of all blocks in the game
+ */
 public enum Blocks {
     AIR,
     STONE,

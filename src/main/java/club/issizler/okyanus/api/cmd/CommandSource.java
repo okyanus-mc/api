@@ -2,6 +2,9 @@ package club.issizler.okyanus.api.cmd;
 
 import club.issizler.okyanus.api.Player;
 
+/**
+ * This is the source of a command
+ */
 public interface CommandSource {
 
     /**
