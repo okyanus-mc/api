@@ -1,60 +1,68 @@
 package club.issizler.okyanus.api.cmd;
 
-/**
- * This is a builder for chat commands
- */
-public interface CommandBuilder {
+import org.apache.commons.lang3.tuple.ImmutableTriple;
+import org.apache.commons.lang3.tuple.Triple;
 
-    /**
-     * Sets the command name
-     *
-     * @param name Command name
-     * @return The builder
-     */
-    CommandBuilder name(String name);
+import java.util.ArrayList;
+import java.util.List;
 
-    /**
-     * Marks the command as OP only
-     *
-     * @return The builder
-     */
-    CommandBuilder opOnly();
+public class CommandBuilder {
 
-    /**
-     * Adds an (possibly optional) argument to this command
-     *
-     * @param name       Argument name
-     * @param type       Argument type
-     * @param isOptional Is this argument optional
-     * @return The builder
-     * @see CommandBuilder#arg(String, ArgumentType)
-     */
-    CommandBuilder arg(String name, ArgumentType type, boolean isOptional);
+    private String name;
+    private boolean isOpOnly = false;
 
-    /**
-     * Adds an argument to this command
-     *
-     * @param name Argument name
-     * @param type Argument type
-     * @return The builder
-     */
-    CommandBuilder arg(String name, ArgumentType type);
+    private CommandRunnable runnable;
 
-    /**
-     * Adds an sub command to this command
-     * A subcommand is created exactly like a normal command.
-     *
-     * @param subcommand The sub command
-     * @return The builder
-     */
-    CommandBuilder subcommand(CommandBuilder subcommand);
+    private List<Triple<String, ArgumentType, Boolean>> args = new ArrayList<>();
+    private List<CommandBuilder> subCommands = new ArrayList<>();
 
-    /**
-     * Links the {@link club.issizler.okyanus.api.cmd.CommandRunnable} of your command
-     *
-     * @param runnable The runnable of your command
-     * @return The builder
-     */
-    CommandBuilder run(CommandRunnable runnable);
+    public CommandBuilder name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public CommandBuilder opOnly() {
+        this.isOpOnly = true;
+        return this;
+    }
+
+    public CommandBuilder run(CommandRunnable runnable) {
+        this.runnable = runnable;
+        return this;
+    }
+
+    public CommandBuilder arg(String name, ArgumentType type) {
+        return arg(name, type, false);
+    }
+
+    public CommandBuilder arg(String name, ArgumentType type, boolean isOptional) {
+        this.args.add(new ImmutableTriple<>(name, type, isOptional));
+        return this;
+    }
+
+    public CommandBuilder subcommand(CommandBuilder subcommand) {
+        this.subCommands.add(subcommand);
+        return this;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public boolean getIsOpOnly() {
+        return this.isOpOnly;
+    }
+
+    public CommandRunnable getRunnable() {
+        return this.runnable;
+    }
+
+    public List<Triple<String, ArgumentType, Boolean>> getArgs() {
+        return this.args;
+    }
+
+    public List<CommandBuilder> getSubCommands() {
+        return this.subCommands;
+    }
 
 }
