@@ -1,5 +1,7 @@
 package club.issizler.okyanus.api.cmd;
 
+import club.issizler.okyanus.api.disappointing._CManagerStatic_pleaseDoNotUseThisHorribleHack;
+
 import java.util.ServiceLoader;
 
 /**
@@ -15,10 +17,10 @@ public interface CommandManager {
      * @return The implementation
      */
     static CommandManager getInstance() {
-        if (_ManagerStatic_pleaseDoNotUseThisHorribleHack.manager == null)
-            _ManagerStatic_pleaseDoNotUseThisHorribleHack.manager = ServiceLoader.load(CommandManager.class).iterator().next();
+        if (_CManagerStatic_pleaseDoNotUseThisHorribleHack.manager == null)
+            _CManagerStatic_pleaseDoNotUseThisHorribleHack.manager = ServiceLoader.load(CommandManager.class).iterator().next();
 
-        return _ManagerStatic_pleaseDoNotUseThisHorribleHack.manager;
+        return _CManagerStatic_pleaseDoNotUseThisHorribleHack.manager;
     }
 
     /**

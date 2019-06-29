@@ -1,5 +1,7 @@
 package club.issizler.okyanus.api.event;
 
+import club.issizler.okyanus.api.disappointing._EManagerStatic_pleaseDoNotUseThisHorribleHack;
+
 import java.util.ServiceLoader;
 
 /**
@@ -14,10 +16,10 @@ public interface EventManager {
      * @return The implementation
      */
     static EventManager getInstance() {
-        if (_ManagerStatic_pleaseDoNotUseThisHorribleHack.manager == null)
-            _ManagerStatic_pleaseDoNotUseThisHorribleHack.manager = ServiceLoader.load(EventManager.class).iterator().next();
+        if (_EManagerStatic_pleaseDoNotUseThisHorribleHack.manager == null)
+            _EManagerStatic_pleaseDoNotUseThisHorribleHack.manager = ServiceLoader.load(EventManager.class).iterator().next();
 
-        return _ManagerStatic_pleaseDoNotUseThisHorribleHack.manager;
+        return _EManagerStatic_pleaseDoNotUseThisHorribleHack.manager;
     }
 
     /**
