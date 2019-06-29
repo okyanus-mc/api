@@ -1,6 +1,6 @@
 package club.issizler.okyanus.api.cmd;
 
-import club.issizler.okyanus.api.Player;
+import club.issizler.okyanus.api.entity.Player;
 
 /**
  * This is the source of a command

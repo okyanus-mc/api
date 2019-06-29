@@ -1,6 +1,7 @@
 package club.issizler.okyanus.api;
 
 import club.issizler.okyanus.api.disappointing._ServerStatic_pleaseDoNotUseThisHorribleHack;
+import club.issizler.okyanus.api.entity.Player;
 import club.issizler.okyanus.api.world.World;
 import org.apache.logging.log4j.Logger;
 
