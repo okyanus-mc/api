@@ -70,9 +70,11 @@ publishing {
         maven {
             url = currentRepo
 
-            credentials {
-                username "admin"
-                password "$nexusPassword"
+            if (Project.hasProperty("nexusPassword")) {
+                credentials {
+                    username "admin"
+                    password "$nexusPassword"
+                }
             }
         }
     }
