@@ -26,7 +26,7 @@ javadoc {
 
 task sourcesJar(type: Jar) {
     from sourceSets.main.allJava
-    archiveClassifier = 'sources'
+    classifier = 'sources'
 }
 
 def releases = "https://maven.issizler.club/repository/maven-releases/"
