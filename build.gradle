@@ -1,9 +1,12 @@
 plugins {
     id 'java'
+    id 'signing'
+    id 'maven'
+    id 'maven-publish'
 }
 
-group 'club.issizler'
-version '0.1.0'
+group 'club.issizler.okyanus'
+version "0.1.0-SNAPSHOT"
 
 sourceCompatibility = 1.8
 
@@ -19,4 +22,71 @@ dependencies {
 
 javadoc {
     exclude "**/_*.java" // Hide my embarrassment
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    archiveClassifier = 'sources'
+}
+
+def releases = "https://maven.issizler.club/repository/maven-releases/"
+def snapshots = "https://maven.issizler.club/repository/maven-snapshots/"
+def currentRepo = version.endsWith("-SNAPSHOT") ? snapshots : releases
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom {
+                name = "Okyanus API"
+                description = "Serverside Minecraft Mod API"
+                url = "https://okyanus-mc.github.io/"
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'admicos'
+                        name = 'Ecmel Berk Canlıer'
+                        email = 'me@ecmelberk.com'
+                    }
+                }
+            }
+
+            groupId = "${group}"
+            artifactId = 'api'
+            version = getVersion()
+
+            from components.java
+            artifact sourcesJar
+        }
+    }
+
+    repositories {
+        maven {
+            url = currentRepo
+
+            credentials {
+                username "admin"
+                password "$nexusPassword"
+            }
+        }
+    }
+}
+
+signing {
+    required { project.hasProperty('release') }
+    sign publishing.publications.mavenJava
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+        }
+    }
 }
