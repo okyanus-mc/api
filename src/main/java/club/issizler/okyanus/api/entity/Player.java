@@ -15,7 +15,7 @@ public interface Player extends Entity {
      * @param returnFluids Should we return fluids?
      * @return Block, or null if we couldn't find anything or we found an entity
      */
-    Block getLookedBlock(double distance, boolean returnFluids);
+    Block getTargetBlock(double distance, boolean returnFluids);
 
     /**
      * Send a chat message to this player
