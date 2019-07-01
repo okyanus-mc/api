@@ -19,15 +19,8 @@ public class CommandBuilder {
     private List<Triple<String, ArgumentType, Boolean>> args = new ArrayList<>();
     private List<CommandBuilder> subCommands = new ArrayList<>();
 
-    /**
-     * Sets the command name
-     *
-     * @param name Command name
-     * @return The builder
-     */
-    public CommandBuilder name(String name) {
+    public CommandBuilder(String name) {
         this.name = name;
-        return this;
     }
 
     /**

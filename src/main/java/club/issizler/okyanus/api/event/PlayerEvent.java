@@ -5,7 +5,7 @@ import club.issizler.okyanus.api.entity.Player;
 /**
  * Marks an {@link Event} as a player event.
  */
-public interface PlayerEvent {
+public interface PlayerEvent extends Event {
 
     /**
      * Returns the player that fired this event

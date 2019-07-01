@@ -3,6 +3,8 @@ package club.issizler.okyanus.api.entity;
 import club.issizler.okyanus.api.chat.MessageType;
 import club.issizler.okyanus.api.world.Block;
 
+import java.util.Optional;
+
 /**
  * This is the representation of a player
  */
@@ -15,7 +17,7 @@ public interface Player extends Entity {
      * @param returnFluids Should we return fluids?
      * @return Block, or null if we couldn't find anything or we found an entity
      */
-    Block getTargetBlock(double distance, boolean returnFluids);
+    Optional<Block> getTargetBlock(double distance, boolean returnFluids);
 
     /**
      * Send a chat message to this player

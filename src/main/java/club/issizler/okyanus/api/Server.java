@@ -1,29 +1,20 @@
 package club.issizler.okyanus.api;
 
-import club.issizler.okyanus.api.disappointing._ServerStatic_pleaseDoNotUseThisHorribleHack;
+import club.issizler.okyanus.api.cmd.CommandBuilder;
 import club.issizler.okyanus.api.entity.Player;
+import club.issizler.okyanus.api.event.Event;
+import club.issizler.okyanus.api.event.EventHandler;
 import club.issizler.okyanus.api.world.World;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Represents a Minecraft Server
  */
 public interface Server {
-
-    /**
-     * Gets the running server
-     *
-     * @return The server
-     */
-    static Server getInstance() {
-        if (_ServerStatic_pleaseDoNotUseThisHorribleHack.server == null)
-            throw new RuntimeException("Server has not been initialized yet!");
-
-        return _ServerStatic_pleaseDoNotUseThisHorribleHack.server;
-    }
 
     /**
      * Gets the server name
@@ -66,4 +57,34 @@ public interface Server {
      * @return are we running inside the main thread
      */
     boolean isMainThread();
+
+    /**
+     * Registers a command
+     *
+     * @param cmd command to register
+     */
+    void registerCommand(CommandBuilder cmd);
+
+    /**
+     * Registers an event
+     *
+     * @param e event to register
+     */
+    void registerEvent(EventHandler e);
+
+    /**
+     * Triggers an event
+     *
+     * @param e event to trigger.
+     */
+    <E extends Event> E triggerEvent(E e);
+
+    /**
+     * Gets a player by name
+     *
+     * @param playerName Name of the player to get
+     * @return the player instance
+     */
+    Optional<Player> getPlayerByName(String playerName);
+
 }

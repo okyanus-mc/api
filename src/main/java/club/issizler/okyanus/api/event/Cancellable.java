@@ -3,7 +3,7 @@ package club.issizler.okyanus.api.event;
 /**
  * Marks an {@link Event} as cancellable.
  */
-public interface Cancellable {
+public interface Cancellable extends Event {
 
     /**
      * Returns true if the event is cancelled.

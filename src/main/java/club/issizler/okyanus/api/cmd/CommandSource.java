@@ -2,6 +2,8 @@ package club.issizler.okyanus.api.cmd;
 
 import club.issizler.okyanus.api.entity.Player;
 
+import java.util.Optional;
+
 /**
  * This is the source of a command
  */
@@ -29,7 +31,7 @@ public interface CommandSource {
      *
      * @return the player
      */
-    Player getPlayer();
+    Optional<Player> getPlayer();
 
     /**
      * Gets a text argument
@@ -37,7 +39,7 @@ public interface CommandSource {
      * @param arg Argument name
      * @return Argument value
      */
-    String getArgText(String arg);
+    Optional<String> getArgText(String arg);
 
     /**
      * Gets a player argument
@@ -45,6 +47,6 @@ public interface CommandSource {
      * @param arg Argument name
      * @return Argument value
      */
-    Player getArgPlayer(String arg);
+    Optional<Player> getArgPlayer(String arg);
 
 }

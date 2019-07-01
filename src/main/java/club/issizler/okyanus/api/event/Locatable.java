@@ -3,9 +3,9 @@ package club.issizler.okyanus.api.event;
 import club.issizler.okyanus.api.math.Vec3d;
 
 /**
- * Marks an {@link Event} as locateable.
+ * Marks an {@link Event} as locatable.
  */
-public interface Locateable {
+public interface Locatable extends Event {
 
     /**
      * Gets the location of this event
