@@ -17,6 +17,7 @@ public interface World {
 
     /**
      * Gets the block at pos
+     *
      * @param pos The position
      * @return The block at pos
      */

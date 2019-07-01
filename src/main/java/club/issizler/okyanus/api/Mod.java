@@ -7,7 +7,7 @@ import club.issizler.okyanus.api.event.EventManager;
 
 /**
  * Extend this class on the base classes of your mods.
- *
+ * <p>
  * Please don't forget to register the initialization method in your <code>fabric.mod.json</code>'s
  * <code>entrypoints.server</code> as <code>com.example.YourMod::init</code>
  */

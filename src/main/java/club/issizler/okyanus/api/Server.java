@@ -55,6 +55,7 @@ public interface Server {
 
     /**
      * Gets all worlds in this server
+     *
      * @return all worlds in this server
      */
     List<World> getWorlds();
