@@ -59,4 +59,11 @@ public interface Server {
      * @return all worlds in this server
      */
     List<World> getWorlds();
+
+    /**
+     * Checks if we are running inside the server's main thread
+     *
+     * @return are we running inside the main thread
+     */
+    boolean isMainThread();
 }
