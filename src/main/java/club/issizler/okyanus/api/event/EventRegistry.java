@@ -1,7 +1,12 @@
 package club.issizler.okyanus.api.event;
 
+/**
+ * This is the global event registry class.
+ *
+ * You shouldn't use it directly, but use the {@link club.issizler.okyanus.api.Mod#registerEvent(EventHandler)}
+ * or {@link club.issizler.okyanus.api.Server#registerEvent(EventHandler)} methods instead.
+ */
 public interface EventRegistry {
-
 
     /**
      * This method registers your events to this event manager
