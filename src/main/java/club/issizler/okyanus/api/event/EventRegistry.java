@@ -1,6 +1,6 @@
 package club.issizler.okyanus.api.event;
 
-public interface EventManager {
+public interface EventRegistry {
 
 
     /**

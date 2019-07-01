@@ -1,6 +1,6 @@
 package club.issizler.okyanus.api.cmd;
 
-public interface CommandManager {
+public interface CommandRegistry {
 
     /**
      * Registers a command
