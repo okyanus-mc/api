@@ -38,7 +38,7 @@ publishing {
         mavenJava(MavenPublication) {
             pom {
                 name = "Okyanus API"
-                description = "Serverside Minecraft Mod API"
+                description = "Serverside API for Fabric"
                 url = "https://okyanus-mc.github.io/"
 
                 licenses {
