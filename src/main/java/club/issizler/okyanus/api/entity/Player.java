@@ -1,6 +1,7 @@
 package club.issizler.okyanus.api.entity;
 
 import club.issizler.okyanus.api.chat.MessageType;
+import club.issizler.okyanus.api.perms.Permissible;
 import club.issizler.okyanus.api.world.Block;
 
 import java.util.Optional;
@@ -8,14 +9,14 @@ import java.util.Optional;
 /**
  * This is the representation of a player
  */
-public interface Player extends Entity {
+public interface Player extends Entity, Permissible {
 
     /**
      * Gets the block the player is looking at
      *
      * @param distance     How far should we check before giving up
      * @param returnFluids Should we return fluids?
-     * @return Block, or null if we couldn't find anything or we found an entity
+     * @return Block, or empty if we couldn't find anything or we found an entity
      */
     Optional<Block> getTargetBlock(double distance, boolean returnFluids);
 

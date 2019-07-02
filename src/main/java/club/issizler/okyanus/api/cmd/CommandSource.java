@@ -1,13 +1,14 @@
 package club.issizler.okyanus.api.cmd;
 
 import club.issizler.okyanus.api.entity.Player;
+import club.issizler.okyanus.api.perms.Permissible;
 
 import java.util.Optional;
 
 /**
  * This is the source of a command
  */
-public interface CommandSource {
+public interface CommandSource extends Permissible {
 
     /**
      * Is this source the server console?
@@ -48,5 +49,16 @@ public interface CommandSource {
      * @return Argument value
      */
     Optional<Player> getArgPlayer(String arg);
+
+    @Override
+    default String getIdentifier() {
+        if (isConsole())
+            return "CONSOLE";
+
+        if (getPlayer().isPresent())
+            return getPlayer().get().getIdentifier();
+
+        return "UNKNOWN";
+    }
 
 }
