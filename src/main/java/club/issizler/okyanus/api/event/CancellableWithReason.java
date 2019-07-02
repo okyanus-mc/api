@@ -1,5 +1,8 @@
 package club.issizler.okyanus.api.event;
 
+/**
+ * Marks an event as cancellable, and attaches a reason for the cancellation.
+ */
 public interface CancellableWithReason extends Cancellable {
 
     /**

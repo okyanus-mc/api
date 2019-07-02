@@ -5,6 +5,9 @@ import club.issizler.okyanus.api.world.World;
 
 import java.util.UUID;
 
+/**
+ * This is the representation of an entity
+ */
 public interface Entity {
 
     /**
