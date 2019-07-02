@@ -14,6 +14,8 @@ public interface CancellableWithReason extends Cancellable {
      * <p>
      * This will be the text shown to user when
      * this event gets cancelled.
+     *
+     * @param reason The cancellation reason
      */
     void setCancelReason(String reason);
 

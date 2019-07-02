@@ -22,7 +22,7 @@ public interface Permissible {
      *
      * @param perm The permission to add
      */
-    default void addPermission(Permissible permissible, String perm) {
+    default void addPermission(String perm) {
         Okyanus.getPermissionService().addPermission(this, perm);
     }
 
@@ -31,7 +31,7 @@ public interface Permissible {
      *
      * @param perm Permission to remove
      */
-    default void removePermission(Permissible permissible, String perm) {
+    default void removePermission(String perm) {
         Okyanus.getPermissionService().removePermission(this, perm);
     }
 

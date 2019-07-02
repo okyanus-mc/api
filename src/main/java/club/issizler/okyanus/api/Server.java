@@ -75,7 +75,10 @@ public interface Server {
     /**
      * Triggers an event
      *
-     * @param e event to trigger.
+     * @param <E> The event type to trigger
+     * @param e Event to trigger.
+     *
+     * @return The event instance, with any modifications applied by event handlers
      */
     <E extends Event> E triggerEvent(E e);
 
@@ -86,5 +89,12 @@ public interface Server {
      * @return the player instance
      */
     Optional<Player> getPlayerByName(String playerName);
+
+    /**
+     * Execute a console command
+     *
+     * @param command Command to execute
+     */
+     void exec(String command);
 
 }

@@ -36,6 +36,9 @@ public class CommandBuilder {
     /**
      * Adds an (possibly optional) argument to this command
      *
+     * @param name Argument name
+     * @param type Argument type
+     * @return The builder
      * @see CommandBuilder#arg(String, ArgumentType)
      */
     public CommandBuilder arg(String name, ArgumentType type) {
@@ -47,6 +50,7 @@ public class CommandBuilder {
      *
      * @param name Argument name
      * @param type Argument type
+     * @param isOptional Is this argument optional?
      * @return The builder
      */
     public CommandBuilder arg(String name, ArgumentType type, boolean isOptional) {

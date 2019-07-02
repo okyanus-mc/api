@@ -4,4 +4,5 @@ club.issizler.okyanus.api.cmd
 club.issizler.okyanus.api.entity
 club.issizler.okyanus.api.event
 club.issizler.okyanus.api.math
+club.issizler.okyanus.api.perms
 club.issizler.okyanus.api.world
