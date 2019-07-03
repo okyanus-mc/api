@@ -23,4 +23,11 @@ public interface World {
      */
     Block getBlockAt(Vec3d pos);
 
+    /**
+     * Gets the name of this world
+     *
+     * @return the name of this world
+     */
+    String getName();
+
 }
