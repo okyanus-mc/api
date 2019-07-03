@@ -1,9 +1,17 @@
 package club.issizler.okyanus.api.world;
 
+import club.issizler.okyanus.api.math.Vec3d;
+
 /**
- * This class is empty for now.
- * You can submit API requests from https://github.com/okyanus-mc/api/issues
+ * Represents a block in the world
  */
 public interface Block {
+
+    /**
+     * Gets the block's coordinates
+     *
+     * @return the block's coordinates
+     */
+    Vec3d getLocation();
 
 }
