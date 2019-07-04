@@ -14,4 +14,11 @@ public interface Block {
      */
     Vec3d getLocation();
 
+    /**
+     * Gets the block's world
+     *
+     * @return the block's world
+     */
+    World getWorld();
+
 }
