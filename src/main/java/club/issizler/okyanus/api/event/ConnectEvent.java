@@ -5,7 +5,7 @@ import java.net.InetAddress;
 /**
  * This event fires whenever a player connects the server
  */
-public interface ConnectEvent extends PlayerEvent, CancellableWithReason {
+public interface ConnectEvent extends PlayerEvent, CancellableWithReason, MessagedEvent {
 
     /**
      * Gets the address of this connection
