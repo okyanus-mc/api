@@ -40,7 +40,20 @@ public interface Player extends Entity, Permissible {
      *
      * @param message The kick message
      */
-
     void kick(String message);
+
+    /**
+     * Is this player an OP
+     *
+     * @return true if this player is an OP
+     */
+    boolean isOp();
+
+    /**
+     * Set this player's OP status
+     *
+     * @param isOp the new OP status
+     */
+    void setOp(boolean isOp);
 
 }
