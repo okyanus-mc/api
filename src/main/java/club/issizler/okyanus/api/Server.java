@@ -76,8 +76,7 @@ public interface Server {
      * Triggers an event
      *
      * @param <E> The event type to trigger
-     * @param e Event to trigger.
-     *
+     * @param e   Event to trigger.
      * @return The event instance, with any modifications applied by event handlers
      */
     <E extends Event> E triggerEvent(E e);
@@ -95,6 +94,12 @@ public interface Server {
      *
      * @param command Command to execute
      */
-     void exec(String command);
+    void exec(String command);
+
+    /**
+     * Sends a message to all online players
+     * @param message Message to send
+     */
+    void broadcast(String message);
 
 }
