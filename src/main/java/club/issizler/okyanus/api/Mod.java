@@ -1,6 +1,7 @@
 package club.issizler.okyanus.api;
 
 import club.issizler.okyanus.api.cmd.CommandBuilder;
+import club.issizler.okyanus.api.cmdnew.Command;
 import club.issizler.okyanus.api.event.EventHandler;
 
 /**
@@ -33,16 +34,27 @@ public abstract class Mod {
      * @param e The event handler to register
      */
     public void registerEvent(EventHandler e) {
-        getServer().registerEvent(e);
+        getServer().getEventRegistry().register(e);
+    }
+
+    /**
+     * Registers a {@link Command}
+     *
+     * @param command The command to register
+     */
+    public void registerCommand(Command command) {
+        getServer().getCommandRegistry().register(command);
     }
 
     /**
      * Registers a {@link CommandBuilder}
      *
-     * @param builder The command to register
+     * @deprecated Use {@link #registerCommand(#Command)}
+     * @param command The command to register
      */
-    public void registerCommand(CommandBuilder builder) {
-        getServer().registerCommand(builder);
+    @Deprecated
+    public void registerCommand(CommandBuilder command) {
+        getServer().getOldCommandRegistry().register(command);
     }
 
 }

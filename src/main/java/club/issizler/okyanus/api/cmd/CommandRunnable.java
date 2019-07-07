@@ -1,16 +1,18 @@
 package club.issizler.okyanus.api.cmd;
 
 /**
- * Your should either
- * - Implement this in a class
- * - Create an anonymous class implementing this
- * <p>
- * And pass it to {@link CommandBuilder#run(CommandRunnable)} to make your
- * command actually do something
+ * Runs your command
+ *
+ * @deprecated use {@link club.issizler.okyanus.api.cmdnew.CommandRunnable}
  */
-@FunctionalInterface
+@Deprecated
 public interface CommandRunnable {
 
+    /**
+     * Runs your command with the source
+     * @param source
+     * @return
+     */
     int run(CommandSource source);
 
 }

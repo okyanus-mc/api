@@ -11,7 +11,7 @@ import club.issizler.okyanus.api.Okyanus;
  * <p>
  * To register a permission service, use Java SPI (https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html)
  */
-public interface PermissionService {
+public interface PermissionService extends OperatorService {
 
     /**
      * Checks if the permissible has this permission

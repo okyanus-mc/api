@@ -21,6 +21,7 @@ dependencies {
 
     // Used internally, can be usable by mods
     implementation 'org.apache.commons:commons-lang3:3.5'
+    implementation 'org.cactoos:cactoos:0.41'
 }
 
 javadoc {

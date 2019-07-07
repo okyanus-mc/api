@@ -5,7 +5,7 @@ import club.issizler.okyanus.api.Okyanus;
 /**
  * An object with permissions
  */
-public interface Permissible {
+public interface Permissible extends Operator {
 
     /**
      * Checks if this permissible has this permission

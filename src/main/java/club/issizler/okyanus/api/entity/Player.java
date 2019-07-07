@@ -3,7 +3,6 @@ package club.issizler.okyanus.api.entity;
 import club.issizler.okyanus.api.chat.MessageType;
 import club.issizler.okyanus.api.perms.Permissible;
 import club.issizler.okyanus.api.world.Block;
-
 import java.util.Optional;
 
 /**

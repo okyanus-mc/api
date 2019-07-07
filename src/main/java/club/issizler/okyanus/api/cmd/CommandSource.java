@@ -6,8 +6,9 @@ import club.issizler.okyanus.api.perms.Permissible;
 import java.util.Optional;
 
 /**
- * This is the source of a command
+ * @deprecated Use {@link club.issizler.okyanus.api.cmdnew.CommandSource}
  */
+@Deprecated
 public interface CommandSource extends Permissible {
 
     /**
