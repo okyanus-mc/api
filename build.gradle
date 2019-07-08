@@ -32,10 +32,6 @@ task sourcesJar(type: Jar) {
     classifier = 'sources'
 }
 
-def releases = "https://maven.issizler.club/repository/maven-releases/"
-def snapshots = "https://maven.issizler.club/repository/maven-snapshots/"
-def currentRepo = version.endsWith("-SNAPSHOT") ? snapshots : releases
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -71,7 +67,7 @@ publishing {
 
     repositories {
         maven {
-            url = currentRepo
+            url = "https://maven.issizler.club"
 
             if (project.hasProperty("nexusPassword")) {
                 credentials {
