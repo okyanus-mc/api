@@ -49,7 +49,7 @@ public abstract class Mod {
     /**
      * Registers a {@link CommandBuilder}
      *
-     * @deprecated Use {@link #registerCommand(#Command)}
+     * @deprecated Use {@link #registerCommand(Command)}}
      * @param command The command to register
      */
     @Deprecated
