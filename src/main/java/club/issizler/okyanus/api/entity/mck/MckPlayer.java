@@ -14,8 +14,8 @@ import java.util.UUID;
 public class MckPlayer implements Player {
 
     @Override
-    public Block getTargetBlock(double distance, boolean returnFluids) {
-        return new MckBlock();
+    public Optional<Block> getTargetBlock(double distance, boolean returnFluids) {
+        return Optional.of(new MckBlock());
     }
 
     @Override
