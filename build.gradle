@@ -21,7 +21,6 @@ dependencies {
 
     // Used internally, can be usable by mods
     implementation 'org.apache.commons:commons-lang3:3.5'
-    implementation 'org.cactoos:cactoos:0.41'
 }
 
 javadoc {
@@ -32,10 +31,6 @@ task sourcesJar(type: Jar) {
     from sourceSets.main.allJava
     classifier = 'sources'
 }
-
-def releases = "https://maven.issizler.club/repository/maven-releases/"
-def snapshots = "https://maven.issizler.club/repository/maven-snapshots/"
-def currentRepo = version.endsWith("-SNAPSHOT") ? snapshots : releases
 
 publishing {
     publications {
@@ -72,7 +67,7 @@ publishing {
 
     repositories {
         maven {
-            url = currentRepo
+            url = "https://maven.issizler.club"
 
             if (project.hasProperty("nexusPassword")) {
                 credentials {
