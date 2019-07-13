@@ -3,6 +3,7 @@ package club.issizler.okyanus.api;
 import club.issizler.okyanus.api.cmd.CommandBuilder;
 import club.issizler.okyanus.api.cmdnew.Command;
 import club.issizler.okyanus.api.event.EventHandler;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Extend this class on the base classes of your mods.
@@ -33,7 +34,7 @@ public abstract class Mod {
      *
      * @param e The event handler to register
      */
-    public void registerEvent(EventHandler e) {
+    public void registerEvent(@NotNull final EventHandler e) {
         getServer().getEventRegistry().register(e);
     }
 
@@ -42,7 +43,7 @@ public abstract class Mod {
      *
      * @param command The command to register
      */
-    public void registerCommand(Command command) {
+    public void registerCommand(@NotNull final Command command) {
         getServer().getCommandRegistry().register(command);
     }
 

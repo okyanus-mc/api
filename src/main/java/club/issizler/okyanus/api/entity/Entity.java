@@ -1,27 +1,23 @@
 package club.issizler.okyanus.api.entity;
 
+import club.issizler.okyanus.api.cmdnew.CommandSender;
 import club.issizler.okyanus.api.math.Vec3d;
 import club.issizler.okyanus.api.world.World;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
 /**
  * This is the representation of an entity
  */
-public interface Entity {
-
-    /**
-     * Get entity name
-     *
-     * @return Entity name
-     */
-    String getName();
+public interface Entity extends CommandSender {
 
     /**
      * Get entity's custom name
      *
      * @return Custom name
      */
+    @NotNull
     String getCustomName();
 
     /**
@@ -29,13 +25,14 @@ public interface Entity {
      *
      * @param name New custom name
      */
-    void setCustomName(String name);
+    void setCustomName(@NotNull final String name);
 
     /**
      * Get entity's position
      *
      * @return Entity's position
      */
+    @NotNull
     Vec3d getPos();
 
     /**
@@ -43,6 +40,7 @@ public interface Entity {
      *
      * @return Entity's UUID
      */
+    @NotNull
     UUID getUUID();
 
     /**
@@ -50,6 +48,7 @@ public interface Entity {
      *
      * @return the world the entity is in
      */
+    @NotNull
     World getWorld();
 
     /**
@@ -57,6 +56,6 @@ public interface Entity {
      *
      * @param pos Position to teleport the entity to
      */
-    void teleport(Vec3d pos);
+    void teleport(@NotNull final Vec3d pos);
 
 }

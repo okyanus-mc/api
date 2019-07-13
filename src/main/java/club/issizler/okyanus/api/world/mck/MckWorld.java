@@ -4,18 +4,21 @@ import club.issizler.okyanus.api.math.Vec3d;
 import club.issizler.okyanus.api.world.Block;
 import club.issizler.okyanus.api.world.Blocks;
 import club.issizler.okyanus.api.world.World;
+import org.jetbrains.annotations.NotNull;
 
 public class MckWorld implements World {
 
     @Override
-    public void setBlockAt(Vec3d pos, Blocks block) {
+    public void setBlockAt(@NotNull Vec3d pos, @NotNull Blocks block) {
     }
 
+    @NotNull
     @Override
-    public Block getBlockAt(Vec3d pos) {
+    public Block getBlockAt(@NotNull Vec3d pos) {
         return new MckBlock();
     }
 
+    @NotNull
     @Override
     public String getName() {
         return "";

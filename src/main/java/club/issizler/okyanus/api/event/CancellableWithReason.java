@@ -1,5 +1,7 @@
 package club.issizler.okyanus.api.event;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Marks an event as cancellable, and attaches a reason for the cancellation.
  */
@@ -10,6 +12,7 @@ public interface CancellableWithReason extends Cancellable {
      *
      * @return the cancellation reason
      */
+    @NotNull
     String getCancelReason();
 
     /**
@@ -20,6 +23,6 @@ public interface CancellableWithReason extends Cancellable {
      *
      * @param reason The cancellation reason
      */
-    void setCancelReason(String reason);
+    void setCancelReason(@NotNull final String reason);
 
 }

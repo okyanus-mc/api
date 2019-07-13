@@ -1,5 +1,7 @@
 package club.issizler.okyanus.api.event;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * This is the global event registry class.
  *
@@ -11,9 +13,16 @@ public interface EventRegistry {
     /**
      * This method registers your events to this event manager
      *
-     * @param eventClass Your event handler class
+     * @param eventHandler Your event handler class
      */
-    void register(EventHandler eventClass);
+    void register(@NotNull final EventHandler eventHandler);
+
+    /**
+     * This method unregisters your event
+     *
+     * @param eventHandler YOur event handler class
+     */
+    void unregister(@NotNull final EventHandler eventHandler);
 
     /**
      * Trigger an event.
@@ -23,6 +32,7 @@ public interface EventRegistry {
      * @param <E> Event type
      * @return The modified event
      */
-    <E extends Event> E trigger(E e);
+    @NotNull
+    <E extends Event> E trigger(@NotNull final E e);
 
 }

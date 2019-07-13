@@ -1,5 +1,7 @@
 package club.issizler.okyanus.api.cmdnew;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 /**
@@ -12,7 +14,14 @@ public interface CommandRegistry {
      *
      * @param cmd {@link Command}
      */
-    void register(Command cmd);
+    void register(@NotNull final Command cmd);
+
+    /**
+     * Unregister command
+     *
+     * @param cmd {@link Command}
+     */
+    void unregister(@NotNull final Command cmd);
 
     /**
      * Gets the command
@@ -20,13 +29,15 @@ public interface CommandRegistry {
      * @param commandLabel is command label of the commad
      * @return {@link Command}
      */
-    Command getCommand(String commandLabel);
+    @NotNull
+    Command getCommand(@NotNull final String commandLabel);
 
     /**
      * Gets all commands in the server
      *
      * @return {@link List<Command>}
      */
+    @NotNull
     List<Command> getCommands();
 
 }

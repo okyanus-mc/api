@@ -1,6 +1,8 @@
 package club.issizler.okyanus.api.cmdnew;
 
 import club.issizler.okyanus.api.cmd.ArgumentType;
+import club.issizler.okyanus.api.cmdnew.req.Requirement;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -11,6 +13,7 @@ public interface Command {
      *
      * @return id of the command or sub-command
      */
+    @NotNull
     String getId();
 
     /**
@@ -18,6 +21,7 @@ public interface Command {
      *
      * @return label of the command or sub-command
      */
+    @NotNull
     String getLabel();
 
     /**
@@ -25,6 +29,7 @@ public interface Command {
      *
      * @return aliases of the command or sub-command
      */
+    @NotNull
     List<String> getAliases();
 
     /**
@@ -32,6 +37,7 @@ public interface Command {
      *
      * @return {@link ArgumentType}
      */
+    @NotNull
     ArgumentType getType();
 
     /**
@@ -39,6 +45,7 @@ public interface Command {
      *
      * @return {@link CommandRunnable}
      */
+    @NotNull
     CommandRunnable getRunnable();
 
     /**
@@ -46,13 +53,29 @@ public interface Command {
      *
      * @return {@link Command}
      */
+    @NotNull
     List<Command> getSubCommands();
 
     /**
      * Gets requirements of command or sub-command
      *
-     * @return {@link List<Requirement>}
+     * @return {@link List< Requirement >}
      */
+    @NotNull
     List<Requirement> getRequirements();
+
+    /**
+     * Sets active to command
+     *
+     * @param active boolean to set
+     */
+    void setActive(boolean active);
+
+    /**
+     * Gets active situtaion of the command
+     *
+     * @return if the command is active
+     */
+    boolean isActive();
 
 }

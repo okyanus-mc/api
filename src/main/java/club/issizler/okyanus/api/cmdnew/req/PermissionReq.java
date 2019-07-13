@@ -1,21 +1,21 @@
 package club.issizler.okyanus.api.cmdnew.req;
 
-import club.issizler.okyanus.api.cmdnew.CommandSource;
-import club.issizler.okyanus.api.cmdnew.RequirementEnvelope;
+import club.issizler.okyanus.api.cmdnew.CommandSender;
 import org.cactoos.BiProc;
+import org.jetbrains.annotations.NotNull;
 
 public class PermissionReq extends RequirementEnvelope {
 
-    private PermissionReq(BiProc<CommandSource, String[]> proc, String permission) {
-        super(((commandSource, entry) -> commandSource.hasPermission(permission)), proc);
+    private PermissionReq(@NotNull final BiProc<CommandSender, String[]> proc, @NotNull final String permission) {
+        super(((commandSender, entry) -> commandSender.hasPermission(permission)), proc);
     }
 
-    public PermissionReq(String errorMessage, String permission) {
-        this((commandSource, strings) -> commandSource.sendMessage(errorMessage), permission);
+    public PermissionReq(@NotNull final String errorMessage, @NotNull final String permission) {
+        this((commandSender, strings) -> commandSender.sendMessage(errorMessage), permission);
     }
 
-    public PermissionReq(String permission) {
-        this((commandSource, strings) -> {}, permission);
+    public PermissionReq(@NotNull final String permission) {
+        this((commandSender, strings) -> {}, permission);
     }
 
 }

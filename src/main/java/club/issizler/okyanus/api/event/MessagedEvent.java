@@ -1,5 +1,7 @@
 package club.issizler.okyanus.api.event;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * This interface marks an event as having a message attached to it.
  */
@@ -10,6 +12,7 @@ public interface MessagedEvent {
      *
      * @return The chat message
      */
+    @NotNull
     String getMessage();
 
     /**
@@ -17,6 +20,6 @@ public interface MessagedEvent {
      *
      * @param message The new message
      */
-    void setMessage(String message);
+    void setMessage(@NotNull final String message);
 
 }

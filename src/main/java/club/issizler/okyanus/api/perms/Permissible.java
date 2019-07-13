@@ -1,6 +1,7 @@
 package club.issizler.okyanus.api.perms;
 
 import club.issizler.okyanus.api.Okyanus;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * An object with permissions
@@ -13,7 +14,7 @@ public interface Permissible extends Operator {
      * @param perm Permission to check
      * @return Does the player have this permission?
      */
-    default boolean hasPermission(String perm) {
+    default boolean hasPermission(@NotNull final String perm) {
         return Okyanus.getPermissionService().hasPermission(this, perm);
     }
 
@@ -22,7 +23,7 @@ public interface Permissible extends Operator {
      *
      * @param perm The permission to add
      */
-    default void addPermission(String perm) {
+    default void addPermission(@NotNull final String perm) {
         Okyanus.getPermissionService().addPermission(this, perm);
     }
 
@@ -31,7 +32,7 @@ public interface Permissible extends Operator {
      *
      * @param perm Permission to remove
      */
-    default void removePermission(String perm) {
+    default void removePermission(@NotNull final String perm) {
         Okyanus.getPermissionService().removePermission(this, perm);
     }
 
@@ -45,6 +46,7 @@ public interface Permissible extends Operator {
      *
      * @return This permissible's identifier
      */
+    @NotNull
     String getIdentifier();
 
 }

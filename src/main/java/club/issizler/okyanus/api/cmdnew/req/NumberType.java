@@ -1,13 +1,14 @@
-package club.issizler.okyanus.api.cmdnew;
+package club.issizler.okyanus.api.cmdnew.req;
 
 import org.cactoos.Scalar;
 import org.cactoos.scalar.Or;
+import org.jetbrains.annotations.NotNull;
 
 public enum NumberType {
 
     INT {
         @Override
-        public boolean isTypeOf(String o) {
+        public boolean isTypeOf(@NotNull String o) {
             try {
                 Integer.parseInt(o);
                 return true;
@@ -18,7 +19,7 @@ public enum NumberType {
     },
     ANY {
         @Override
-        public boolean isTypeOf(String o) {
+        public boolean isTypeOf(@NotNull String o) {
             final Scalar<Boolean> or = new Or(
                 input -> input != ANY && input.isTypeOf(o),
                 values()
@@ -38,6 +39,6 @@ public enum NumberType {
      * @param o the string to check
      * @return {@code true} if it is a type of the number
      */
-    public abstract boolean isTypeOf(String o);
+    public abstract boolean isTypeOf(@NotNull final String o);
 
 }

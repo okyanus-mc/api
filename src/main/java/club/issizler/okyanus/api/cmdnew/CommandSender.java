@@ -2,6 +2,7 @@ package club.issizler.okyanus.api.cmdnew;
 
 import club.issizler.okyanus.api.entity.Entity;
 import club.issizler.okyanus.api.perms.Permissible;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Command sender of the command
@@ -9,29 +10,30 @@ import club.issizler.okyanus.api.perms.Permissible;
 public interface CommandSender extends Permissible {
 
     /**
-     * Gets name of the sender
-     * @return name of the sender
+     * Sends this sender multiple messages
+     *
+     * @param messages An array of messages to be displayed
      */
+    void sendMessage(@NotNull final String... messages);
+
+    /**
+     * Gets the name of this command sender
+     *
+     * @return Name of the sender
+     */
+    @NotNull
     String getName();
 
-    /**
-     * Gets entity of the sender
-     *
-     * @return {@link Entity} if it's a Entity else returns {@link club.issizler.okyanus.api.entity.mck.MckEntity}
-     */
-    Entity getEntity();
+    @NotNull
+    @Override
+    default String getIdentifier() {
+        if (this instanceof ConsoleCommandSender)
+            return "CONSOLE";
 
-    /**
-     * Sends the command sender a message.
-     *
-     * @param text the message to send
-     */
-    void sendMessage(String text);
+        if (!(this instanceof Entity))
+            return "UNKNOWN";
 
-    /**
-     * Gets boolean of if the sender is console
-     * @return if the sender is console boolean
-     */
-    boolean isConsole();
+        return ((Entity) this).getUUID().toString();
+    }
 
 }

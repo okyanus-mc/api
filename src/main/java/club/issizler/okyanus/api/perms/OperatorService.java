@@ -1,5 +1,7 @@
 package club.issizler.okyanus.api.perms;
 
+import org.jetbrains.annotations.NotNull;
+
 public interface OperatorService {
 
     /**
@@ -9,7 +11,7 @@ public interface OperatorService {
      * @param op {@code true} to set to an operator,
      * {@code false} to set to a non-operator.
      */
-    void setOp(Operator operator, boolean op);
+    void setOp(@NotNull final Operator operator, boolean op);
 
     /**
      * Checks to see whether or not this permissible object
@@ -18,6 +20,6 @@ public interface OperatorService {
      * @return {@code true} if this permissible object is an
      * operator, {@code false} if it is not
      */
-    boolean isOp(Operator operator);
+    boolean isOp(@NotNull final Operator operator);
 
 }

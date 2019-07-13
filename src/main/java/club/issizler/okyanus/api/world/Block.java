@@ -1,6 +1,7 @@
 package club.issizler.okyanus.api.world;
 
 import club.issizler.okyanus.api.math.Vec3d;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a block in the world
@@ -12,6 +13,7 @@ public interface Block {
      *
      * @return the block's coordinates
      */
+    @NotNull
     Vec3d getLocation();
 
     /**
@@ -19,6 +21,7 @@ public interface Block {
      *
      * @return the block's world
      */
+    @NotNull
     World getWorld();
 
 }

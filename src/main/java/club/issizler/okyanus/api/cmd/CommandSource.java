@@ -2,6 +2,7 @@ package club.issizler.okyanus.api.cmd;
 
 import club.issizler.okyanus.api.entity.Player;
 import club.issizler.okyanus.api.perms.Permissible;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
@@ -51,6 +52,7 @@ public interface CommandSource extends Permissible {
      */
     Optional<Player> getArgPlayer(String arg);
 
+    @NotNull
     @Override
     default String getIdentifier() {
         if (isConsole())

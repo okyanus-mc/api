@@ -2,7 +2,10 @@ package club.issizler.okyanus.api.cmdnew;
 
 import club.issizler.okyanus.api.cmd.ArgumentType;
 import club.issizler.okyanus.api.cmdnew.mck.MckCommandRunnable;
+import club.issizler.okyanus.api.cmdnew.req.Requirement;
+import club.issizler.okyanus.api.cmdnew.req.RequirementEnvelope;
 import org.cactoos.list.ListOf;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,16 +18,20 @@ abstract class CommandEnvelope implements Command {
     private final List<CommandOption> commandOptions;
     private final List<Requirement> requirements = new ArrayList<>();
 
-    CommandEnvelope(String id, List<CommandOption> commandOptions) {
+    private boolean active = true;
+
+    CommandEnvelope(@NotNull final String id, @NotNull final List<CommandOption> commandOptions) {
         this.id = id;
         this.commandOptions = commandOptions;
     }
 
+    @NotNull
     @Override
     public String getId() {
         return id;
     }
 
+    @NotNull
     @Override
     public String getLabel() {
         for (CommandOption option : commandOptions) {
@@ -36,6 +43,7 @@ abstract class CommandEnvelope implements Command {
         return "";
     }
 
+    @NotNull
     @Override
     public List<String> getAliases() {
         for (CommandOption option : commandOptions) {
@@ -47,6 +55,7 @@ abstract class CommandEnvelope implements Command {
         return new ListOf<>();
     }
 
+    @NotNull
     @Override
     public ArgumentType getType() {
         for (CommandOption option : commandOptions) {
@@ -58,17 +67,24 @@ abstract class CommandEnvelope implements Command {
         return ArgumentType.NONE;
     }
 
+    @NotNull
     @Override
     public CommandRunnable getRunnable() {
         for (CommandOption option : commandOptions) {
             if (option.type() != OptionType.RUN) continue;
 
-            return (CommandRunnable) option.value();
+            return source -> {
+                if (isActive())
+                    ((CommandRunnable)option.value()).run(source);
+
+                return 1;
+            };
         }
 
         return new MckCommandRunnable();
     }
 
+    @NotNull
     @Override
     public List<Command> getSubCommands() {
         for (CommandOption option : commandOptions) {
@@ -80,6 +96,7 @@ abstract class CommandEnvelope implements Command {
         return new ListOf<>();
     }
 
+    @NotNull
     @Override
     public List<Requirement> getRequirements() {
         for (CommandOption option : commandOptions) {
@@ -89,10 +106,10 @@ abstract class CommandEnvelope implements Command {
                 requirements.addAll(new ListOf<>((Requirement[]) option.value()));
             } else {
                 requirements.add(
-                    new RequirementEnvelope((BiFunction<CommandSource, Map.Entry<String[], Integer>, Boolean>) option.value()) {
+                    new RequirementEnvelope((BiFunction<CommandSender, Map.Entry<String[], Integer>, Boolean>) option.value()) {
                         @Override
-                        public boolean control(CommandSource commandSource, String[] arguments, int location) {
-                            return super.control(commandSource, arguments, location);
+                        public boolean control(@NotNull CommandSender commandSender, @NotNull String[] arguments, @NotNull int location) {
+                            return super.control(commandSender, arguments, location);
                         }
                     }
                 );
@@ -100,6 +117,16 @@ abstract class CommandEnvelope implements Command {
         }
 
         return requirements;
+    }
+
+    @Override
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    @Override
+    public boolean isActive() {
+        return active;
     }
 
 }

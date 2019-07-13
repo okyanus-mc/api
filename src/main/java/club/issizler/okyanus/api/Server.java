@@ -3,12 +3,14 @@ package club.issizler.okyanus.api;
 import club.issizler.okyanus.api.cmd.CommandBuilder;
 import club.issizler.okyanus.api.cmdnew.Command;
 import club.issizler.okyanus.api.cmdnew.CommandRegistry;
+import club.issizler.okyanus.api.cmdnew.ConsoleCommandSender;
 import club.issizler.okyanus.api.entity.Player;
 import club.issizler.okyanus.api.event.Event;
 import club.issizler.okyanus.api.event.EventHandler;
 import club.issizler.okyanus.api.event.EventRegistry;
 import club.issizler.okyanus.api.world.World;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.List;
@@ -23,6 +25,7 @@ public interface Server {
      *
      * @return the name of the server
      */
+    @NotNull
     String getName();
 
     /**
@@ -30,6 +33,7 @@ public interface Server {
      *
      * @return the version of the server
      */
+    @NotNull
     String getVersion();
 
     /**
@@ -37,6 +41,7 @@ public interface Server {
      *
      * @return the logger of the server
      */
+    @NotNull
     Logger getLogger();
 
     /**
@@ -44,6 +49,7 @@ public interface Server {
      *
      * @return online players in the server
      */
+    @NotNull
     Collection<Player> getPlayerList();
 
     /**
@@ -51,6 +57,7 @@ public interface Server {
      *
      * @return all worlds in this server
      */
+    @NotNull
     List<World> getWorlds();
 
     /**
@@ -67,7 +74,8 @@ public interface Server {
      * @param playerName Name of the player to get
      * @return the player instance
      */
-    Player getPlayerByName(String playerName);
+    @NotNull
+    Player getPlayerByName(@NotNull final String playerName);
 
     /**
      * Runs the given command and sends it to the command
@@ -75,7 +83,7 @@ public interface Server {
      *
      * @param command the command to handle, without the "/"
      */
-    void runCommand(String command);
+    void runCommand(@NotNull final String command);
 
     /**
      * Gets command registry for
@@ -83,6 +91,7 @@ public interface Server {
      *
      * @return {@link CommandRegistry}
      */
+    @NotNull
     CommandRegistry getCommandRegistry();
 
     /**
@@ -91,13 +100,23 @@ public interface Server {
      *
      * @return {@link CommandRegistry}
      */
+    @NotNull
     EventRegistry getEventRegistry();
 
     /**
      * Sends a message to all online players
      * @param message Message to send
      */
-    void broadcast(String message);
+    void broadcast(@NotNull final String message);
+
+    /**
+     * Gets a {@link ConsoleCommandSender} that may be used as an input source
+     * for this server.
+     *
+     * @return a console command sender
+     */
+    @NotNull
+    ConsoleCommandSender getConsoleSender();
 
     /**
      * Execute a console command

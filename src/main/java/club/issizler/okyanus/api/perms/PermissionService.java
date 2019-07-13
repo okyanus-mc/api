@@ -1,6 +1,7 @@
 package club.issizler.okyanus.api.perms;
 
 import club.issizler.okyanus.api.Okyanus;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * This service should be implemented by permission plugins to provide player permissions.
@@ -20,7 +21,7 @@ public interface PermissionService extends OperatorService {
      * @param perm        Permission to check
      * @return Does the player have this permission?
      */
-    boolean hasPermission(Permissible permissible, String perm);
+    boolean hasPermission(@NotNull final Permissible permissible, @NotNull final String perm);
 
     /**
      * Adds a permission to this permissible
@@ -28,7 +29,7 @@ public interface PermissionService extends OperatorService {
      * @param permissible Permissible to add the permission to
      * @param perm        The permission to add
      */
-    void addPermission(Permissible permissible, String perm);
+    void addPermission(@NotNull final Permissible permissible, @NotNull final String perm);
 
     /**
      * Removes a permission from this permissible
@@ -36,6 +37,6 @@ public interface PermissionService extends OperatorService {
      * @param permissible Permissible to remove this permission from
      * @param perm        Permission to remove
      */
-    void removePermission(Permissible permissible, String perm);
+    void removePermission(@NotNull final Permissible permissible, @NotNull final String perm);
 
 }

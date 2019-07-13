@@ -1,5 +1,7 @@
 package club.issizler.okyanus.api.cmdnew;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Command Option converts to Command Dispatcher
  *
@@ -12,6 +14,7 @@ public interface CommandOption<X> {
      *
      * @return {@link OptionType}
      */
+    @NotNull
     OptionType type();
 
     /**
@@ -19,6 +22,7 @@ public interface CommandOption<X> {
      *
      * @return {@link X}
      */
+    @NotNull
     X value();
 
 }

@@ -1,21 +1,21 @@
 package club.issizler.okyanus.api.cmdnew.req;
 
-import club.issizler.okyanus.api.cmdnew.CommandSource;
-import club.issizler.okyanus.api.cmdnew.RequirementEnvelope;
+import club.issizler.okyanus.api.cmdnew.CommandSender;
 import org.cactoos.BiProc;
+import org.jetbrains.annotations.NotNull;
 
 public class OpReq extends RequirementEnvelope {
 
-    private OpReq(BiProc<CommandSource, String[]> proc) {
-        super(((commandSource, entry) -> commandSource.isOp()), proc);
+    private OpReq(@NotNull final BiProc<CommandSender, String[]> proc) {
+        super(((commandSender, entry) -> commandSender.isOp()), proc);
     }
 
-    public OpReq(String errorMessage) {
-        this((commandSource, strings) -> commandSource.sendMessage(errorMessage));
+    public OpReq(@NotNull final String errorMessage) {
+        this((commandSender, strings) -> commandSender.sendMessage(errorMessage));
     }
 
     public OpReq() {
-        this((commandSource, strings) -> {});
+        this((commandSender, strings) -> {});
     }
 
 }

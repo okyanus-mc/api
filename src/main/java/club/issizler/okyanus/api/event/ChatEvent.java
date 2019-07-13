@@ -1,5 +1,7 @@
 package club.issizler.okyanus.api.event;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * This event fires whenever a player sends a chat message.
  */
@@ -10,6 +12,7 @@ public interface ChatEvent extends PlayerEvent, Cancellable, MessagedEvent {
      *
      * @return the formatted message
      */
+    @NotNull
     String getFormattedMessage();
 
     /**
@@ -17,6 +20,6 @@ public interface ChatEvent extends PlayerEvent, Cancellable, MessagedEvent {
      *
      * @param format the new message format
      */
-    void setFormat(String format);
+    void setFormat(@NotNull final String format);
 
 }
